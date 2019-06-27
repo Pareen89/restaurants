@@ -1,6 +1,6 @@
 .nav {
   height: 100vh;
-  min-width: 30rem;
+  width: 30rem;
   //width: 20vw;
   background-color: $navigation_bg;
   color: $navigation_fc;
@@ -86,7 +86,11 @@
     &:hover .button::before {
       width: 50%;
     }
-    &:hover .button {
+    &:hover .button span:nth-child(1),
+    &:hover .button span:nth-child(2),
+    &:hover .button span:nth-child(3),
+    &:hover .button span:nth-child(4) {
+      animation: none;
     }
     .button {
       overflow: hidden;
@@ -107,7 +111,7 @@
         top: 0;
         width: 0%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.1);
         transition: all 1s ease-in-out;
       }
       &:before {
@@ -154,11 +158,10 @@
         animation: animate-left 2s linear infinite;
         animation-delay: 1s;
       }
-      span {
-      }
     }
   }
 }
+// window load add class for navigation drop in
 .drop {
   transition: all 1.6s ease-in;
   position: fixed;
