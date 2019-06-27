@@ -78,15 +78,18 @@
     width: 100%;
     background-color: $navigation_fc;
     display: flex;
-    padding: 1rem;
     color: $navigation_bg;
     cursor: pointer;
     position: relative;
+    padding: 1rem;
     &:hover .button::after,
     &:hover .button::before {
       width: 50%;
     }
+    &:hover .button {
+    }
     .button {
+      overflow: hidden;
       height: 100%;
       width: 100%;
       border: solid 0.15rem lighten($color: $navigation_bg, $amount: 65);
@@ -96,6 +99,7 @@
       font-size: 1.6rem;
       text-transform: uppercase;
       letter-spacing: 0.2rem;
+      position: relative;
       &:before,
       &:after {
         content: '';
@@ -107,10 +111,50 @@
         transition: all 1s ease-in-out;
       }
       &:before {
-        left: 15rem;
+        left: 13.85rem;
       }
       &::after {
-        right: 15rem;
+        right: 13.85rem;
+      }
+      span:nth-child(1) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0.3rem;
+        width: 100%;
+        background: lighten($navigation_bg, 10);
+        animation: animate-top 2s linear infinite;
+      }
+      span:nth-child(2) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 0.3rem;
+        background: lighten($navigation_bg, 10);
+        animation: animate-right 2s linear infinite;
+        animation-delay: 1s;
+      }
+      span:nth-child(3) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 0.3rem;
+        width: 100%;
+        background: lighten($navigation_bg, 10);
+        animation: animate-bottom 2s linear infinite;
+      }
+      span:nth-child(4) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0.3rem;
+        background: lighten($navigation_bg, 10);
+        animation: animate-left 2s linear infinite;
+        animation-delay: 1s;
+      }
+      span {
       }
     }
   }
@@ -119,4 +163,38 @@
   transition: all 1.6s ease-in;
   position: fixed;
   top: 0;
+}
+
+// animation keyframes
+@keyframes animate-top {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes animate-right {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+@keyframes animate-left {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes animate-bottom {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
