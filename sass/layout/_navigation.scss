@@ -1,6 +1,7 @@
 .nav {
   height: 100vh;
-  width: 30rem;
+  min-width: 30rem;
+  //width: 20vw;
   background-color: $navigation_bg;
   color: $navigation_fc;
   display: flex;
@@ -80,6 +81,11 @@
     padding: 1rem;
     color: $navigation_bg;
     cursor: pointer;
+    position: relative;
+    &:hover .button::after,
+    &:hover .button::before {
+      width: 50%;
+    }
     .button {
       height: 100%;
       width: 100%;
@@ -90,6 +96,22 @@
       font-size: 1.6rem;
       text-transform: uppercase;
       letter-spacing: 0.2rem;
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 0%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        transition: all 1s ease-in-out;
+      }
+      &:before {
+        left: 15rem;
+      }
+      &::after {
+        right: 15rem;
+      }
     }
   }
 }

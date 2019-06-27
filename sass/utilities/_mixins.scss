@@ -22,12 +22,4 @@
 
     //1200px
   }
-
-  @if $breakpoint==sm {
-    @media only screen and (max-width: 85.375em) {
-      @content;
-    }
-
-    //1350px
-  }
 }
