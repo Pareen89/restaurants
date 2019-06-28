@@ -38,7 +38,8 @@
     &__info {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-rows: auto auto auto;
+      row-gap: 0.25rem;
       width: 100%;
       font-size: 1.2rem;
       &-item {
@@ -113,7 +114,7 @@
         width: 0%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.1);
-        transition: all 1s ease-in-out;
+        transition: all 0.5s ease-in-out;
       }
       &:before {
         left: 50%;
@@ -164,7 +165,7 @@
 }
 // window load add class for navigation drop in
 .drop {
-  transition: all 1.6s ease-in;
+  transition: all 1.5s ease;
   position: fixed;
   top: 0;
 }
