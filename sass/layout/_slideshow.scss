@@ -6,14 +6,12 @@
   grid-template-rows: 1fr;
   &__images {
     position: absolute;
-    height: 100vh;
-    width: 100%;
     background-color: rgba(85, 52, 52, 0.5);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     @include respond(tab-port) {
-      height: calc(100vh - #{$m_menu_height});
+      height: 100%;
     }
   }
   @include respond(tab-port) {
