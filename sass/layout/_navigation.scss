@@ -4,6 +4,7 @@
   background-color: $navigation_fc;
   display: none;
   z-index: 3;
+  position: fixed;
   @include respond(tab-port) {
     display: flex;
     justify-content: center;
@@ -37,6 +38,7 @@
   background-color: $navigation_bg;
   color: $navigation_fc;
   position: absolute;
+  position: fixed;
   @include respond(tab-port) {
     width: 100%;
     justify-content: space-around;
@@ -116,17 +118,20 @@
   grid-column: 1/2;
   grid-row: 2/3;
   height: 14vh;
-  width: 100%;
+  width: 30rem;
   background-color: $navigation_fc;
   display: flex;
   color: $navigation_bg;
   cursor: pointer;
-  position: relative;
   padding: 1rem;
+  position: fixed;
+  bottom: 0;
   @include respond(tab-port) {
     height: 6.5vh;
+    width: 100%;
     grid-column: 1/2;
     grid-row: 3/4;
+    position: fixed;
   }
 
   .button {
