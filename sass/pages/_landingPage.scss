@@ -5,7 +5,7 @@
   grid-template-rows: calc(100vh - #{$nav_button_height}) $nav_button_height;
   @include respond(tab-port) {
     grid-template-columns: 1fr;
-    grid-template-rows: $m_menu_height auto $m_nav_button_height;
+    grid-template-rows: $m_menu_height calc(100vh - 12.5vh) $m_nav_button_height;
   }
 }
 .pagetwo {
