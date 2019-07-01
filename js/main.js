@@ -3,7 +3,8 @@ function drop() {
   console.log('licked');
   document.getElementById('containerOne').classList.toggle('stop');
 }
-
+let close = document.getElementById('close');
+close.addEventListener('click', function() {});
 // window.addEventListener('load', slideshow());
 
 // function slideshow() {

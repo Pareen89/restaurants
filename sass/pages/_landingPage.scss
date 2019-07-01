@@ -1,10 +1,11 @@
 .landingPage {
+  height: 100vh;
   display: grid;
   grid-template-columns: 30rem auto;
-  grid-template-rows: 86vh 14vh;
+  grid-template-rows: calc(100vh - #{$nav_button_height}) $nav_button_height;
   @include respond(tab-port) {
     grid-template-columns: 1fr;
-    grid-template-rows: 8vh 85.5vh 6.5vh;
+    grid-template-rows: $m_menu_height auto $m_nav_button_height;
   }
 }
 .pagetwo {

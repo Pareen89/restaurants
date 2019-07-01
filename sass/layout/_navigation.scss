@@ -1,5 +1,5 @@
 .nav__mobile {
-  height: 8vh;
+  height: $m_menu_height;
   width: 100vw;
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: $navigation_bg;
@@ -55,14 +55,18 @@
     letter-spacing: 0.3rem;
   }
 }
+// drop down nav container one
 .stop {
-  top: 8vh !important;
+  top: 0;
+  @include respond(tab-port) {
+    top: $m_menu_height !important;
+  }
 }
 
 .nav__containerOne {
   grid-column: 1/2;
   grid-row: 1/2;
-  height: 86vh;
+  height: calc(100vh - #{$nav_button_height});
   width: 30rem;
   display: flex;
   flex-direction: column;
@@ -72,12 +76,15 @@
   position: absolute;
   position: fixed;
   @include respond(tab-port) {
+    height: calc(100vh - #{$m_menu_height} - #{$m_nav_button_height});
     width: 100%;
     justify-content: space-around;
     top: -100rem;
     transition: all 0.5s;
     z-index: 2;
-    overflow: hidden;
+  }
+  @include respond(phone) {
+    overflow: scroll;
   }
   &__logo {
     display: flex;
@@ -102,6 +109,9 @@
     &-list {
       @include respond(tab-port) {
         padding: 5rem;
+      }
+      @include respond(phone) {
+        padding: 1.5rem;
       }
     }
     &-list a {
@@ -160,20 +170,19 @@
 }
 
 .nav__containerTwo {
-  grid-column: 1/2;
-  grid-row: 2/3;
-  height: 14vh;
+  height: $nav_button_height;
   width: 30rem;
   background-color: $navigation_fc;
   display: flex;
   color: $navigation_bg;
   cursor: pointer;
   padding: 1rem;
-  position: fixed;
-  bottom: 0;
   z-index: 2;
+  position: fixed;
+  top: calc(100vh - #{$nav_button_height});
   @include respond(tab-port) {
-    height: 6.5vh;
+    height: $m_nav_button_height;
+    top: calc(100vh - #{$m_nav_button_height});
     width: 100%;
     grid-column: 1/2;
     grid-row: 3/4;

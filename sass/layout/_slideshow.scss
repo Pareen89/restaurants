@@ -13,7 +13,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     @include respond(tab-port) {
-      height: 92vh;
+      height: calc(100vh - #{$m_menu_height});
     }
   }
   @include respond(tab-port) {
