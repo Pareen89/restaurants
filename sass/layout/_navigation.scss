@@ -6,18 +6,48 @@
   display: none;
   z-index: 3;
   position: fixed;
+
   @include respond(tab-port) {
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-row: 1/2;
   }
   &-toggle {
+    height: 8vh;
+    width: 8vh;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    justify-self: start;
+    align-self: center;
+    position: relative;
+    .line {
+      height: 0.2rem;
+      width: 50%;
+      background-color: $navigation_fc;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .line1 {
+      top: 65%;
+    }
+    .line2 {
+      top: 35%;
+    }
+    .line3 {
+    }
+    // position: absolute;
+    // top: 0%;
+    // left: 0%;
+    // transform: translate(50%, 50%);
   }
   &-title {
     color: $navigation_fc;
     font-size: 2.4rem;
     grid-column: 1/3;
+    grid-row: 1/2;
     justify-self: center;
     align-self: center;
     font-weight: bold;
@@ -28,6 +58,7 @@
 .stop {
   top: 8vh !important;
 }
+
 .nav__containerOne {
   grid-column: 1/2;
   grid-row: 1/2;
