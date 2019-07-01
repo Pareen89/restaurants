@@ -1,7 +1,8 @@
 .nav__mobile {
   height: 8vh;
   width: 100vw;
-  background-color: $navigation_fc;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: $navigation_bg;
   display: none;
   z-index: 3;
   position: fixed;
@@ -14,7 +15,7 @@
   &-toggle {
   }
   &-title {
-    color: $navigation_bg;
+    color: $navigation_fc;
     font-size: 2.4rem;
     grid-column: 1/3;
     justify-self: center;
@@ -49,6 +50,7 @@
   &__logo {
     display: flex;
     justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 3rem;
     letter-spacing: 0.3rem;
     text-transform: uppercase;
@@ -65,11 +67,21 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.35rem;
-    &-list:not(:last-child) {
-      padding-bottom: 2rem;
+    &-list {
       @include respond(tab-port) {
-        padding-bottom: 7rem;
+        padding: 5rem;
       }
+    }
+    &-list a {
+      padding: 0.3rem 0;
+      //border-top: 0.1rem solid white;
+      //border-bottom: 0.1rem solid white;
+      @include respond(tab-port) {
+        border: none;
+      }
+    }
+    &-list:not(:last-child) {
+      padding-bottom: 4rem;
     }
   }
   &__info {
@@ -79,6 +91,7 @@
     row-gap: 0.25rem;
     width: 100%;
     font-size: 1.2rem;
+    letter-spacing: 0.2rem;
 
     &-item {
       justify-self: center;
@@ -126,6 +139,7 @@
   padding: 1rem;
   position: fixed;
   bottom: 0;
+  z-index: 2;
   @include respond(tab-port) {
     height: 6.5vh;
     width: 100%;
