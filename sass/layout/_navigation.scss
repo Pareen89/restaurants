@@ -182,7 +182,7 @@
   top: calc(100vh - #{$nav_button_height});
   @include respond(tab-port) {
     height: $m_nav_button_height;
-    bottom: 0;
+    top: calc(100vh - #{$m_nav_button_height});
     width: 100%;
     grid-column: 1/2;
     grid-row: 3/4;
