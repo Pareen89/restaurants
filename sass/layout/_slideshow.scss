@@ -6,21 +6,47 @@
   grid-template-rows: calc(100vw - 30rem);
   background-color: rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  position: relative;
   @include respond(tab-port) {
     grid-column: 1/2;
     grid-row: 2/3;
   }
   img {
+    position: absolute;
     grid-row: 1/2;
     grid-column: 1/2;
     height: 100vh;
     width: calc(100vw - 30rem);
-    display: flex;
     justify-items: center;
     align-items: center;
+    animation: left 1s ease;
     @include respond(tab-port) {
       height: calc(100vh - 12.5vh);
       width: 100vw;
     }
+  }
+}
+.one {
+  animation: left 1s ease;
+}
+.two {
+  animation: right 1s ease;
+}
+@keyframes right {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -300rem;
+    display: none;
+  }
+}
+@keyframes left {
+  0% {
+    display: flex;
+    left: 300rem;
+  }
+  100% {
+    left: 0;
   }
 }
